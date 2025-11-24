@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".aboutus"
-    android:background="@color/black">
+    android:background="@color/black"
+    tools:context=".aboutus">
 
     <!-- Top Bar -->
     <RelativeLayout
@@ -23,17 +23,17 @@
             android:src="@drawable/back_btn"
             android:padding="14dp"
             android:clickable="true"
-            android:focusable="true" />
+            android:focusable="true"/>
 
         <TextView
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="About Us"
+            android:text="@string/about_us"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="19sp"
+            android:textStyle="bold"/>
     </RelativeLayout>
 
     <!-- Scrollable Content -->
@@ -48,59 +48,74 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="20dp">
 
-            <!-- Banner Image -->
+            <!-- Banner -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="0dp"
-                android:layout_marginTop="8dp"
-                android:clipToPadding="true"
-                android:clipChildren="true">
+                android:layout_height="210dp"
+                app:cardCornerRadius="18dp">
 
                 <ImageView
                     android:id="@+id/healthBanner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/health"
-                    android:contentDescription="Health Banner" />
+                    android:src="@drawable/health"/>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- About Text -->
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/card_divider"/>
+
+            <!-- Who We Are -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/who_we_are"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"/>
+
             <TextView
                 android:id="@+id/aboutText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="FitKage Health is dedicated to helping people live healthier lives by combining fitness tracking, nutrition guidance, and wellness tips in one easy-to-use app."
+                android:layout_marginTop="10dp"
+                android:text="@string/who_we_are_desc"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:lineSpacingExtra="4dp" />
+                android:textSize="15sp"/>
 
-            <!-- Mission Title -->
+            <!-- Mission Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/card_divider"/>
+
+            <!-- Mission -->
             <TextView
                 android:id="@+id/missionTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Our Mission"
+                android:layout_marginTop="18dp"
+                android:text="@string/our_mission"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="17sp"/>
 
-            <!-- Mission Text -->
             <TextView
                 android:id="@+id/missionText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="To empower individuals to achieve their fitness goals and build long-lasting healthy habits through motivation, technology, and community support."
+                android:layout_marginTop="10dp"
+                android:text="@string/our_mission_desc"
                 android:textColor="@color/white"
-                android:textSize="15sp"
-                android:lineSpacingExtra="4dp" />
+                android:textSize="15sp"/>
 
         </LinearLayout>
     </ScrollView>

@@ -28,6 +28,7 @@
         <item name="android:colorForeground">#99FFFFFF</item>
 
     </style>
+
     <style name="LoginTextInputOuterFieldStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -43,5 +44,14 @@
         <item name="android:maxLines">1</item>
         <item name="android:textSize">14sp</item>
         <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Style.App.circleImageView" parent="">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.App.CircleImageView</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
     </style>
 </resources>

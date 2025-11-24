@@ -1,339 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/scrollRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Personal_info"
-    android:background="@color/black">
+    android:background="@drawable/personal_info_bg_gradient"
+    android:padding="20dp"
+    android:fillViewport="true">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
 
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile Setup"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="14dp"/>
+
+        <!-- Step header -->
+        <TextView
+            android:id="@+id/tvStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Step 1 of 3 — Basic"
+            android:textColor="#DDDDDD"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Card container (ViewFlipper for steps) -->
         <LinearLayout
+            android:id="@+id/cardWrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="52dp">
+            android:background="@drawable/personal_info_card_bg"
+            android:padding="18dp"
+            android:elevation="6dp">
 
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="FitKage Health"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/gains"
-                android:layout_width="124dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="4dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="Gains Image"
-                app:srcCompat="@drawable/muscular"
-                app:tint="@color/white" />
-
-
-            <LinearLayout
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="20dp">
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right">
 
-                <EditText
-                    android:id="@+id/editTextName"
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Name"
-                    android:inputType="textPersonName"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/darker_gray" />
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/editTextSurname"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tell us about you"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <EditText
+                        android:id="@+id/editTextName"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="First name"
+                        android:inputType="textPersonName"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextSurname"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Surname"
+                        android:inputType="textPersonName"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="Phone"
+                        android:inputType="phone"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Surname"
-                    android:inputType="textPersonName"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/darker_gray" />
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/editTextEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/darker_gray" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Goals &amp; measurements"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="12dp"/>
 
-                <EditText
-                    android:id="@+id/editTextPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Phone"
-                    android:inputType="phone"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/darker_gray" />
+                    <!-- Units row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
 
-                <EditText
-                    android:id="@+id/editTextSteps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_background"
-                    android:hint="Steps Goal"
-                    android:inputType="number"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/darker_gray" />
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="Height unit"
+                            android:textColor="#CCCCCC"/>
 
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp">
-
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/age"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="#333333"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="8dp">
+                        <Spinner
+                            android:id="@+id/spnHeightUnit"
+                            android:layout_width="140dp"
+                            android:layout_height="44dp"
+                            android:background="@drawable/spinner_background"
+                            android:layout_marginStart="8dp" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
 
                         <TextView
-                            android:id="@+id/AgeText"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Age"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"/>
+                            android:text="Weight unit"
+                            android:textColor="#CCCCCC"/>
 
-                        <TextView
-                            android:id="@+id/Age"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="23"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="8dp">
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:layout_width="47dp"
-                                android:layout_height="43dp"
-                                android:background="@drawable/minus" />
-
-                            <View
-                                android:layout_width="16dp"
-                                android:layout_height="0dp"/>
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:layout_width="47dp"
-                                android:layout_height="43dp"
-                                android:background="@drawable/add" />
-                        </LinearLayout>
+                        <Spinner
+                            android:id="@+id/spnWeightUnit"
+                            android:layout_width="140dp"
+                            android:layout_height="44dp"
+                            android:background="@drawable/spinner_background"
+                            android:layout_marginStart="8dp" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+
+                    <EditText
+                        android:id="@+id/editTextSteps"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Daily steps goal"
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Age"
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Gender"
+                        android:inputType="text"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextHeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="12dp"
+                        android:hint="Height"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                    <EditText
+                        android:id="@+id/editTextWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="Weight"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/input_background"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#BDBDBD" />
+
+                </LinearLayout>
 
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/weight"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="#333333"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="8dp">
+                    android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Confirm your details"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/summaryText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
+                        android:textColor="#EAEAEA"
+                        android:textSize="14sp"
+                        android:padding="6dp"
+                        android:background="@drawable/summary_card_bg"/>
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/weightText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Weight(KG)"
-                            android:textColor="@color/white"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/weights"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="120"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:layout_marginTop="8dp">
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:layout_width="47dp"
-                                android:layout_height="43dp"
-                                android:background="@drawable/minus" />
-
-                            <View
-                                android:layout_width="16dp"
-                                android:layout_height="0dp"/>
-
-                            <androidx.appcompat.widget.AppCompatButton
-                                android:layout_width="47dp"
-                                android:layout_height="43dp"
-                                android:background="@drawable/add" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/height_card"
-                android:layout_marginTop="8dp"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="18dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardBackgroundColor="#333333">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/height_label"
-                        android:textColor="@color/white"
-                        android:text="Height (CM)"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="26sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <TextView
-                        android:id="@+id/height_value"
-                        android:textSize="32sp"
-                        android:textColor="@color/white"
-                        android:text="0"
-                        android:layout_marginTop="16dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_below="@id/height_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <androidx.appcompat.widget.AppCompatSeekBar
-                        android:id="@+id/height_seekbar"
-                        android:layout_below="@id/height_value"
-                        android:layout_margin="8dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_width="match_parent"
-                        android:progressTint="#FF4081"
-                        android:progressBackgroundTint="#555555"
-                        android:thumbTint="#FFFFFF"
-                        android:layout_height="wrap_content"/>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/gender"
-                android:layout_marginTop="8dp"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="18dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardBackgroundColor="#333333">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/genders"
-                        android:textColor="@color/white"
-                        android:text="What is your gender"
-                        android:layout_centerHorizontal="true"
-                        android:textSize="26sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                    <Spinner
-                        android:id="@+id/gender_spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/genders"
-                        android:layout_marginTop="16dp"
-                        android:popupBackground="#333333"
-                        android:spinnerMode="dropdown"/>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-
+            </ViewFlipper>
 
         </LinearLayout>
 
-    </ScrollView>
+        <!-- bottom nav -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
 
-    <Button
-        android:id="@+id/idAdd"
-        android:layout_width="117dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#2E2E2E"
-        android:text="Add"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="Back"
+                android:visibility="gone"
+                android:background="@drawable/button_secondary"
+                android:textColor="#FFFFFF"/>
+
+            <Space android:layout_width="12dp" android:layout_height="1dp"/>
+
+            <Button
+                android:id="@+id/idAdd"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="48dp"
+                android:text="Next"
+                android:background="@drawable/button_primary"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

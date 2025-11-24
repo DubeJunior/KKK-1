@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,7 +10,7 @@
     android:background="@color/black"
     tools:context=".Setting">
 
-
+    <!-- Header -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,14 +28,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="@string/settings_title"
             android:layout_centerInParent="true"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="18sp"/>
     </RelativeLayout>
 
-
+    <!-- Scroll Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -44,7 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <ImageView
                 android:id="@+id/profileid"
@@ -59,8 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Place Holder"
+                android:text="Placeholder"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"/>
@@ -70,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="88888888888"
+                android:text="0000000000"
                 android:textColor="@color/white"
                 android:textSize="12sp"/>
 
@@ -81,12 +80,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
                 android:background="@drawable/round_back_secondary_100"
-                android:text="Edit Profile"
+                android:text="@string/edit_profile"
                 android:textAllCaps="false"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"/>
 
-
+            <!-- Notifications Card -->
             <LinearLayout
                 android:background="@drawable/round_back_white10_20"
                 android:layout_width="match_parent"
@@ -97,49 +96,14 @@
                 android:orientation="vertical"
                 android:padding="15dp">
 
-                <!-- Light Mode -->
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:id="@+id/lightmode"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_back_night_mode"
-                        android:src="@drawable/light"
-                        android:padding="12dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/lightmode"
-                        android:layout_marginStart="20dp"
-                        android:text="Light mode"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/lightswitch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/lightmodeswitch"/>
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
-
-                    <ImageView
-                        android:layout_width="40dp"
                         android:id="@+id/notifcation"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_back_notification"
                         android:src="@drawable/notification"
@@ -149,9 +113,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/notifcation"
                         android:layout_marginStart="20dp"
-                        android:text="Notification"
+                        android:layout_toEndOf="@id/notifcation"
+                        android:text="@string/notification"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"/>
 
@@ -164,43 +128,9 @@
                         android:switchMinWidth="50dp"
                         android:theme="@style/notificationswitch"/>
                 </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0dp">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:id="@+id/security"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_back_secrurity"
-                        android:src="@drawable/notification"
-                        android:padding="12dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/security"
-                        android:layout_marginStart="20dp"
-                        android:text="Security and Privacy"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
-
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/securitys"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:switchMinWidth="50dp"
-                        android:theme="@style/securityswitch"/>
-                </RelativeLayout>
             </LinearLayout>
 
-
+            <!-- Language + Personal Data -->
             <LinearLayout
                 android:background="@drawable/round_back_white10_20"
                 android:layout_width="match_parent"
@@ -211,72 +141,42 @@
                 android:orientation="vertical"
                 android:padding="15dp">
 
-                <!-- Text Size -->
+                <!-- Language -->
                 <RelativeLayout
+                    android:id="@+id/Language"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp">
 
                     <ImageView
+                        android:id="@+id/Languages"
                         android:layout_width="40dp"
-                        android:id="@+id/Textsize"
                         android:layout_height="40dp"
-                        android:background="@drawable/round_back_night_mode"
-                        android:src="@drawable/chat_bot"
-                        android:padding="12dp"/>
+                        android:background="@drawable/round_back_notification"
+                        android:padding="12dp"
+                        android:src="@drawable/languages" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="20dp"
-                        android:layout_toEndOf="@id/Textsize"
-                        android:text="ChatBot"
+                        android:layout_toEndOf="@id/Languages"
+                        android:text="@string/language"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
-                </RelativeLayout>
-
-                <!-- Language -->
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:id="@+id/Languages"
-                        android:layout_height="40dp"
-                        android:background="@drawable/round_back_notification"
-                        android:src="@drawable/languages"
-                        android:padding="12dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/Languages"
-                        android:layout_marginStart="20dp"
-                        android:text="Language"
-                        android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:src="@drawable/right_arrow" />
                 </RelativeLayout>
 
-                <!-- Download Personal Data -->
+                <!-- Personal Data -->
                 <RelativeLayout
+                    android:id="@+id/downs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -285,29 +185,30 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_back_secrurity"
-                        android:src="@drawable/personal"
-                        android:padding="12dp"/>
+                        android:padding="12dp"
+                        android:src="@drawable/personal" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/personaldata"
                         android:layout_marginStart="20dp"
-                        android:text="Download Personal Data"
+                        android:layout_toEndOf="@id/personaldata"
+                        android:text="@string/download_personal_data"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/right_arrow" />
                 </RelativeLayout>
+
             </LinearLayout>
 
-            <!-- Third Card: FAQs / About Us / Send Message -->
+            <!-- Third Card -->
             <LinearLayout
                 android:background="@drawable/round_back_white10_20"
                 android:layout_width="match_parent"
@@ -321,70 +222,73 @@
 
                 <!-- FAQs -->
                 <RelativeLayout
+                    android:id="@+id/faqs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp">
 
                     <ImageView
-                        android:layout_width="40dp"
                         android:id="@+id/FAQs"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_back_night_mode"
-                        android:src="@drawable/faq"
-                        android:padding="12dp"/>
+                        android:padding="12dp"
+                        android:src="@drawable/faq" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/FAQs"
                         android:layout_marginStart="20dp"
-                        android:text="FAQs"
+                        android:layout_toEndOf="@id/FAQs"
+                        android:text="@string/faqs"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/right_arrow" />
                 </RelativeLayout>
 
                 <!-- About Us -->
                 <RelativeLayout
+                    android:id="@+id/abouts"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp">
 
                     <ImageView
-                        android:layout_width="40dp"
                         android:id="@+id/aboutus"
+                        android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/round_back_notification"
-                        android:src="@drawable/info"
-                        android:padding="12dp"/>
+                        android:padding="12dp"
+                        android:src="@drawable/info" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/aboutus"
                         android:layout_marginStart="20dp"
-                        android:text="About Us"
+                        android:layout_toEndOf="@id/aboutus"
+                        android:text="@string/about_us"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/right_arrow" />
                 </RelativeLayout>
 
                 <!-- Send Message -->
                 <RelativeLayout
+                    android:id="@+id/messagesss"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -397,27 +301,65 @@
                         android:src="@drawable/comments" />
 
                     <TextView
+                        android:id="@+id/logoutText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_toEndOf="@id/messages"
                         android:layout_marginStart="20dp"
-                        android:text="Send Us A Message"
+                        android:layout_toEndOf="@id/messages"
+                        android:text="@string/send_message"
                         android:textColor="#FFFFFF"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/right_arrow"
                         android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/right_arrow" />
                 </RelativeLayout>
+
+                <!-- Logout -->
+                <RelativeLayout
+                    android:id="@+id/loginin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <ImageView
+                        android:id="@+id/logoutIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/round_back_secrurity"
+                        android:padding="12dp"
+                        android:src="@drawable/logout" />
+
+                    <TextView
+                        android:id="@+id/logoutTextOnly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@id/logoutIcon"
+                        android:text="@string/logout"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/right_arrow" />
+                </RelativeLayout>
+
             </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
-    <!-- Bottom Navigation Layout -->
+
+    <!-- Bottom Navigation -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -427,8 +369,7 @@
         android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="0dp"> <!-- Ensure no top margin here -->
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
             android:id="@+id/ibHome"
@@ -437,7 +378,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.25"
             android:background="@android:color/transparent"
-            android:contentDescription="Home"
+            android:contentDescription="@string/home"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/home"
             app:tint="@color/white" />
@@ -449,7 +390,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.25"
             android:background="@android:color/transparent"
-            android:contentDescription="Meditate"
+            android:contentDescription="@string/meditate"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/meditate"
             app:tint="@color/white" />
@@ -461,7 +402,7 @@
             android:layout_gravity="center"
             android:layout_weight="0.25"
             android:background="@android:color/transparent"
-            android:contentDescription="Gym"
+            android:contentDescription="@string/gym"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/dumbbell"
             app:tint="@color/white" />
@@ -473,9 +414,10 @@
             android:layout_gravity="center"
             android:layout_weight="0.25"
             android:background="@android:color/transparent"
-            android:contentDescription="Profile"
+            android:contentDescription="@string/profile"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/profile"
             app:tint="@color/white" />
     </LinearLayout>
+
 </LinearLayout>

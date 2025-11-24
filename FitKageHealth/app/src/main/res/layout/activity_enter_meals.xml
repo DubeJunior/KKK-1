@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".Enter_meals">
+    tools:context=".food.Enter_meals">
 
     <!-- Top bar -->
     <RelativeLayout

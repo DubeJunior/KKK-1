@@ -1,6 +1,8 @@
 package com.example.fitkagehealth
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -8,18 +10,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
-class FAQsScreen : AppCompatActivity() {
+class FAQsScreen : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<LanguageData>()
     private lateinit var adapter: LanguageAdapter
+    private lateinit var backBtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_faqs_screen)
 
         recyclerView = findViewById(R.id.recyclerView)
-
+        backBtn = findViewById(R.id.backBtn)
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -29,6 +32,7 @@ class FAQsScreen : AppCompatActivity() {
         adapter = LanguageAdapter(mList)
         recyclerView.adapter = adapter
     }
+
 
     private fun filterList(query: String?) {
         if (query != null) {
@@ -104,5 +108,9 @@ class FAQsScreen : AppCompatActivity() {
                 "Yes, FitKage provides personalized workout and nutrition recommendations based on your fitness goals."
             )
         )
+        backBtn.setOnClickListener {
+            startActivity(Intent(this, Setting::class.java))
+        }
     }
+
 }
